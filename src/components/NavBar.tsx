@@ -9,10 +9,11 @@ import {
 import Image from "next/image";
 import Container from "./Container";
 import { NAV_LINKS } from "@/lib/data";
-import Link from "next/link";
+
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { IconHome, IconHomeFilled } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function NavBar() {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -44,7 +45,7 @@ export default function NavBar() {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="relative mx-auto flex items-center justify-between gap-6 rounded-full bg-white dark:bg-black"
+        className="relative mx-auto flex items-center justify-between gap-6 rounded-full bg-white/80 backdrop-blur-lg dark:bg-black"
       >
         <AnimatePresence>
           {pathName !== "/" ? (

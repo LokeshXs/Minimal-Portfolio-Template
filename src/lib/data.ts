@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
   {
     title: "About",
-    href: "/href",
+    href: "/about",
   },
   {
     title: "Projects",
@@ -13,34 +13,328 @@ export const NAV_LINKS = [
   },
   {
     title: "Blog",
-    href: "/blog/tailwindcss-basics",
+    href: "/blogs",
   },
 ];
 
-
 export const PROJECTS = [
   {
-    title:"Landing Page",
-    src:"/projects/project1.webp",
-    href:"#",
-    description:"Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs."
+    title: "Landing Page",
+    src: "/projects/project1.webp",
+    href: "#",
+    description:
+      "Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs.",
+    tech: [
+      {
+        name: "React",
+        icon: "/icons/react.svg",
+        width: 66,
+      },
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Tailwind",
+        icon: "/icons/tailwind.svg",
+        width: 76,
+      },
+    ],
+  },
+  {
+    title: "Landing Page",
+    src: "/projects/project2.webp",
+    href: "#",
+    description:
+      "Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs.",
+    tech: [
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Golang",
+        icon: "/icons/golang-1.svg",
+        width: 70,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
+  },
+  {
+    title: "Landing Page",
+    src: "/projects/project3.webp",
+    href: "#",
+    description:
+      "Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs.",
+    tech: [
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Node.js",
+        icon: "/icons/nodejs-icon.svg",
+        width: 72,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
+  },
+  {
+    title: "Landing Page",
+    src: "/projects/project4.webp",
+    href: "#",
+    description:
+      "Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs.",
+    tech: [
+      {
+        name: "Vite",
+        icon: "/icons/vitejs.svg",
+        width: 54,
+      },
+      {
+        name: "Python",
+        icon: "/icons/python-5.svg",
+        width: 74,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
+  },
+];
+
+export const EXPERIENCE = [
+  {
+    companyName: "Microsoft",
+    companyLogoPath: "/experience/microsoft.svg",
+    designation: "Senior Frontend Engineer",
+    jobType: "Full Time",
+    jobLocation: "Banglore, India",
+    period: "Jan 2022 - Present",
+    expPoints: [
+      "Built and maintained responsive web applications using React.js, Next.js, and Tailwind CSS, improving page performance by 30%.",
+      "Collaborated with UI/UX team to implement pixel-perfect designs and deliver smooth, user-friendly interfaces.",
+      "Integrated REST APIs and GraphQL endpoints, optimizing data fetching with React Query and caching strategies.",
+    ],
+      tech: [
+      {
+        name: "Vite",
+        icon: "/icons/vitejs.svg",
+        width: 54,
+      },
+      {
+        name: "Python",
+        icon: "/icons/python-5.svg",
+        width: 74,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
+  },
+  {
+    companyName: "Netflix",
+    companyLogoPath: "/experience/netflix.svg",
+    designation: "Frontend Engineer",
+    jobType: "Full Time",
+    jobLocation: "Remote",
+    period: "Aug 2020 – Dec 2021",
+    expPoints: [
+      "Developed reusable UI components with React and Storybook, reducing code duplication.",
+      "Implemented state management using Redux Toolkit and Context API for complex workflows.",
+      "Worked closely with backend engineers to integrate APIs securely with authentication flows (OAuth, JWT).",
+    ],
+        tech: [
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Node.js",
+        icon: "/icons/nodejs-icon.svg",
+        width: 72,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
+  },
+  {
+    companyName: "Tesla",
+    companyLogoPath: "/experience/tesla.svg",
+    designation: "Junior Frontend Developer",
+    jobType: "Contract",
+    jobLocation: "Remote",
+    period: "Jun 2018 – Jun 2020",
+    expPoints: [
+      "Migrated legacy jQuery applications to React.js, improving maintainability.",
+      "Learned and applied Agile methodology, participating in sprint planning and reviews.",
+      "Implemented form validations, authentication flows, and role-based access control.",
+    ],
+       tech: [
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Golang",
+        icon: "/icons/golang-1.svg",
+        width: 70,
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        width: 96,
+      },
+    ],
   },
     {
-    title:"Landing Page",
-    src:"/projects/project2.webp",
-    href:"#",
-    description:"Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs."
+    companyName: "Amazon",
+    companyLogoPath: "/experience/amazon.svg",
+    designation: "Junior Frontend Developer",
+    jobType: "Internship",
+    jobLocation: "Pune, India",
+    period: "Nov 2017 – Feb 2018",
+    expPoints: [
+      "Developed and maintained client-facing dashboards with React, Redux Toolkit, and TypeScript.",
+      "Contributed to UI testing with Jest and React Testing Library.",
+    ],
+        tech: [
+      {
+        name: "React",
+        icon: "/icons/react.svg",
+        width: 66,
+      },
+      {
+        name: "Next.js",
+        icon: "/icons/next-js.svg",
+        width: 68,
+      },
+      {
+        name: "Tailwind",
+        icon: "/icons/tailwind.svg",
+        width: 76,
+      },
+    ],
   },
-    {
-    title:"Landing Page",
-    src:"/projects/project3.webp",
-    href:"#",
-    description:"Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs."
+];
+
+export const ABOUT_IMAGES = [
+  "/about/about1.jpg",
+  "/about/about2.jpg",
+  "/about/about3.jpg",
+  "/about/about4.jpg",
+  "/about/about5.jpg",
+  "/about/about6.jpg",
+  "/about/about7.jpg",
+];
+
+export const BLOGS = [
+  {
+    title: "Getting Started with Tailwind CSS",
+    description:
+      "Learn the basics of Tailwind CSS and how to quickly build responsive, modern UIs.",
+    slug: "getting-started-with-tailwind-css",
+    published_at: "Monday, Sep 1, 2025",
   },
-    {
-    title:"Landing Page",
-    src:"/projects/project4.webp",
-    href:"#",
-    description:"Here’s a clean and modern hero section for a renewable energy website 🌿 Focused on solar panel solutions for smarter and more efficient buildings — designed to balance bold typography, strong visuals, and accessible CTAs."
-  }
-]
+  {
+    title: "Understanding React Hooks",
+    description:
+      "A deep dive into useState, useEffect, and other powerful React hooks for managing state and side effects.",
+    slug: "understanding-react-hooks",
+    published_at: "Thursday, Aug 28, 2025",
+  },
+  {
+    title: "Mastering Next.js for Full-Stack Apps",
+    description:
+      "Build production-ready applications with server-side rendering, API routes, and static site generation in Next.js.",
+    slug: "mastering-nextjs-for-full-stack-apps",
+    published_at: "Wednesday, Aug 20, 2025",
+  },
+  {
+    title: "Introduction to Prisma ORM",
+    description:
+      "Simplify database access and queries with Prisma's type-safe ORM for modern Node.js applications.",
+    slug: "introduction-to-prisma-orm",
+    published_at: "Friday, Aug 15, 2025",
+  },
+  {
+    title: "10 Tips for Writing Clean JavaScript",
+    description:
+      "Best practices and techniques for writing maintainable, readable, and efficient JavaScript code.",
+    slug: "10-tips-for-writing-clean-javascript",
+    published_at: "Sunday, Aug 10, 2025",
+  },
+];
+
+export const ACHIVEMENTSTIMELINE = [
+  {
+    year: "2025",
+    achivements: [
+      {
+        title: "Promoted to Senior Software Engineer",
+        description:
+          "Led a team of 5 engineers and delivered a high-scale microservices project on time.",
+      },
+      {
+        title: "Open Source Contribution",
+        description:
+          "Contributed to Next.js core features, which got merged into production release.",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    achivements: [
+      {
+        title: "Built AI-Powered SaaS Tool",
+        description:
+          "Launched a SaaS product that converts YouTube videos into SEO blogs, gained 2K users in 3 months.",
+      },
+      {
+        title: "Hackathon Winner",
+        description:
+          "Won 1st place at a national-level hackathon by building a real-time collaboration app.",
+      },
+      {
+        title: "Conference Speaker",
+        description:
+          "Spoke at JSConf about scaling React applications for millions of users.",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    achivements: [
+      {
+        title: "Joined HCL Technologies",
+        description:
+          "Started working as a frontend engineer focusing on React and Next.js projects.",
+      },
+      {
+        title: "Launched Open Source Library",
+        description:
+          "Created a React hooks library that gained 500+ GitHub stars within 2 months.",
+      },
+    ],
+  },
+];
