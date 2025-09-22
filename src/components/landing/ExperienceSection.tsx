@@ -13,12 +13,12 @@ import TechStackBadge from "../common/TechStackBadge";
 
 export default function ExperienceSection() {
   return (
-    <div className="py-8">
+    <div className="py-8  px-4">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="Worked at reputed firms" />
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-8 py-6">
         {EXPERIENCE.map((exp, idx) => (
           <div key={`exp-${idx}`} className="flex items-start gap-12">
             <div className="flex flex-1 flex-col gap-3">

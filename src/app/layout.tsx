@@ -27,7 +27,7 @@ export default function RootLayout({
 
     <html lang="en" className="light" >
       <body
-        className={`${rubik.className} antialiased bg-neutral-100 dark:bg-neutral-700`}
+        className={`${rubik.className} antialiased bg-neutral-100 dark:bg-neutral-700 [--pattern-fg:var(--color-gray-950)]/5  dark:[--pattern-fg:var(--color-white)]/10`}
         >
         <NavBar/>
      

@@ -338,3 +338,37 @@ export const ACHIVEMENTSTIMELINE = [
     ],
   },
 ];
+
+
+export const TESTIMONIALS = [
+  {
+    content: "Working with Lokesh was a great experience. He delivered a clean, scalable frontend architecture and made the UI feel seamless and intuitive.",
+    name: "Ananya Sharma",
+    designation: "Product Manager, FinTech Startup",
+    avatarPath:"/testimonial/ananya.jpg"
+  },
+  {
+    content: "Lokesh’s attention to detail in React and Next.js projects really impressed us. He optimized performance and improved our web app’s user experience drastically.",
+    name: "Sophie Williams",
+    designation: "CTO, Creative Agency",
+    avatarPath:"/testimonial/sophie.jpg"
+  },
+  {
+    content: "He has a strong problem-solving mindset and quickly adapts to new technologies. Our backend APIs and frontend integration were smoother than ever.",
+    name: "Rahul Mehta",
+    designation: "Software Architect, SaaS Company",
+    avatarPath:"/testimonial/rahul.jpg"
+  },
+  {
+    content: "Lokesh not only wrote efficient code but also guided our team in implementing best practices. His collaborative approach made the project a success.",
+    name: "Arjun Patel",
+    designation: "Team Lead, E-commerce Platform",
+    avatarPath:"/testimonial/arjun.jpg"
+  },
+  {
+    content: "A reliable engineer with a knack for delivering on time. The web application he built for us was robust, fast, and scalable.",
+    name: "David Johnson",
+    designation: "Founder, Startup Inc.",
+    avatarPath:"/testimonial/david.jpg"
+  }
+];

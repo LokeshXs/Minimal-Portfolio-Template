@@ -23,7 +23,7 @@ export default function ProjectCard({
   return (
     <div className="group hover:shadow-custom relative rounded-xl border border-transparent p-4 transition-all duration-300 hover:border-neutral-200">
       <Link href={project.href} className="flex flex-col items-center">
-        <div className="group-hover:shadow-custom relative z-0 h-[200px] w-[360px] overflow-hidden rounded-md transition-all duration-300 group-hover:-translate-y-1">
+        <div className="group-hover:shadow-custom relative z-0 h-[200px] w-full overflow-hidden rounded-md transition-all duration-300 group-hover:-translate-y-1">
           <Image
             src={project.src}
             alt={project.title}

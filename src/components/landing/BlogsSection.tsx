@@ -5,7 +5,7 @@ import AnimatedSubheading from "../common/AnimatedSubHeading";
 
 export default function BlogsSection() {
   return (
-    <div className="py-8">
+    <div className="py-8  px-4">
      <div className=" flex justify-center ">
    
       <AnimatedSubheading subheading=" Sharing knowledge as I learn"/>

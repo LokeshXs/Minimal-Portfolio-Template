@@ -31,7 +31,7 @@ export default function NavBar() {
   });
 
   return (
-    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-10">
+    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14">
       <motion.nav
         animate={{
           width: scrolled ? "90%" : "100%",
