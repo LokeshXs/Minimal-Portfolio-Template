@@ -1,3 +1,11 @@
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
+
+
+export const NAME="Lokesh Singh 👋"
+export const DESCRIPTION="I’m a software engineer specializing in building modern, scalable, and user-friendly web applications. I love turning ideas into functional products — from designing sleek interfaces with React/Next.js to architecting robust backends with Node.js and databases like PostgreSQL."
+
+
+
 export const NAV_LINKS = [
   {
     title: "About",
@@ -16,6 +24,8 @@ export const NAV_LINKS = [
     href: "/blogs",
   },
 ];
+
+export const PROJECTS_DESCRIPTION="Here you’ll find a collection of the work I’ve built as a software engineer specializing in web development. Each project highlights different aspects of my skills — from crafting seamless user interfaces and responsive designs to developing scalable backend systems and integrating modern tools & APIs."
 
 export const PROJECTS = [
   {
@@ -372,3 +382,25 @@ export const TESTIMONIALS = [
     avatarPath:"/testimonial/david.jpg"
   }
 ];
+
+
+export const SOCIALS=[
+  {
+    name:"X",
+    href:"https://x.com/singh_loke28577",
+    icon:IconBrandX
+
+  },
+    {
+    name:"Github",
+    href:"https://github.com/LokeshXs",
+    icon:IconBrandGithub
+
+  },
+    {
+    name:"Linked in",
+    href:"https://www.linkedin.com/in/lokeshsingh1129/",
+    icon:IconBrandLinkedin
+
+  },
+]

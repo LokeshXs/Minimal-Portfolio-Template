@@ -1,0 +1,20 @@
+import { SOCIALS } from "@/lib/data";
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <div className="flex items-center justify-between px-4 py-4">
+      <p className="text-secondary text-sm">Built by Lokesh Singh</p>
+
+      <div className="flex items-center gap-2">
+        {SOCIALS.map((social, idx) => (
+          <Link  href={social.href} key={`social-${idx}`} target="_blank">
+            <div className="text-secondary hover:text-primary shrink-0 rounded-full border border-neutral-200 bg-neutral-100 p-1 transition-all duration-300">
+              <social.icon className="h-5 w-5" />{" "}
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}

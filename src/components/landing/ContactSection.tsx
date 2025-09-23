@@ -4,6 +4,7 @@ import AnimatedSubheading from "../common/AnimatedSubHeading";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ContactSection() {
 
@@ -32,8 +33,10 @@ export default function ContactSection() {
            
             className="flex-1 border-0 shadow-none focus-visible:ring-0"
             placeholder="Your email"
+            value={value}
+            onChange={(e)=>{setValue(e.target.value)}}
           />
-          <Button >Send Enquiry</Button>
+          <Link href={`mailto:${value}`} className=""><Button >Send Enquiry</Button></Link>
         </div>
       </div>
     </div>

@@ -1,13 +1,11 @@
 "use client";
 
-import TimelineBlock from "@/components/about/TimelineBlock";
-import AnimatedSubheading from "@/components/common/AnimatedSubHeading";
 import Container from "@/components/Container";
 import ContactForm from "@/components/form/contactForm";
-import { ABOUT_IMAGES, ACHIVEMENTSTIMELINE } from "@/lib/data";
-
 import { motion } from "motion/react";
-import Image from "next/image";
+
+const CONTACT_DESCRIPTION =
+  "I'm open to freelancing offers. Reach out to me to inquire more about my work.";
 
 export default function Page() {
   const variants = {
@@ -24,33 +22,54 @@ export default function Page() {
   };
 
   return (
-    <Container className="min-h-screen overflow-x-hidden">
-      <div>
-        <div className="space-y-2">
-          <motion.h1
-            variants={variants}
-            initial="hiddenVariants"
-            animate="visibleVariants"
-            className="text-4xl font-bold drop-shadow-lg"
-          >
-            Contact Me 🤝
-          </motion.h1>
-          <motion.p
-            variants={variants}
-            initial="hiddenVariants"
-            animate="visibleVariants"
-            className="text-secondary max-w-xl"
-          >
-            I&apos;m open to freelancing offers. Reach out to me to inquire more
-            about my work.
-          </motion.p>
-        </div>
-        <div className="py-20 max-w-xl mx-auto">
-          <ContactForm/>
-        </div>
-       
-     
+    <Container className="relative min-h-screen overflow-x-hidden">
+      <div className="space-y-2 px-4 py-8">
+        <motion.h1
+          variants={variants}
+          initial="hiddenVariants"
+          animate="visibleVariants"
+          className="text-4xl font-bold drop-shadow-lg"
+        >
+          {"Contact Me 🤝".split(" ").map((word, idx) => (
+            <motion.span
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 0.1 + idx / 10 }}
+              viewport={{ once: true }}
+              key={`${word}-${idx}`}
+            >
+              {word}&nbsp;
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        <motion.p
+          variants={variants}
+          initial="hiddenVariants"
+          animate="visibleVariants"
+          className="text-secondary max-w-xl break-normal"
+        >
+          {CONTACT_DESCRIPTION.split(" ").map((word, idx) => (
+            <motion.span
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 0.2 + idx / 20 }}
+              viewport={{ once: true }}
+              key={`${word}-${idx}`}
+              className="inline-block"
+            >
+              {word}&nbsp;
+            </motion.span>
+          ))}
+        </motion.p>
       </div>
+      <div className="block h-[2px] w-full bg-neutral-100" />
+      <div className="mx-auto max-w-xl px-4 py-20">
+        <ContactForm />
+      </div>
+
+      <div className="absolute top-0 left-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+      <div className="absolute top-0 right-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
     </Container>
   );
 }
