@@ -46,7 +46,7 @@ export default function Page() {
           variants={variants}
           initial="hiddenVariants"
           animate="visibleVariants"
-          className="text-4xl font-bold drop-shadow-lg"
+          className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl"
         >
           {"All Blogs ✍️".split(" ").map((word, idx) => (
             <motion.span
@@ -64,7 +64,7 @@ export default function Page() {
           variants={variants}
           initial="hiddenVariants"
           animate="visibleVariants"
-          className="text-secondary max-w-xl break-normal"
+         className="text-muted-foreground max-w-xl pt-4 text-base break-normal"
         >
           {BLOGS_DESCRIPTION.split(" ").map((word, idx) => (
             <motion.span
@@ -81,7 +81,7 @@ export default function Page() {
         </motion.p>
       </div>
 
-      <div className="block h-[2px] w-full bg-neutral-100" />
+      <div className="block h-[2px] w-full bg-muted" />
 
       <motion.div
         variants={containerVariants}
@@ -95,27 +95,27 @@ export default function Page() {
             key={`blog-${idx}`}
             className="relative"
           >
-            <Link href={`/${blog.slug}`} className="group relative block p-4">
+               <Link href={`/${blog.slug}`} className="group relative block p-4">
               <div className="relative z-[2] flex items-start justify-between gap-6 overflow-hidden">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold">{blog.title}</h3>
-                  <p className="text-secondary line-clamp-3 max-w-lg text-sm">
+                  <h3 className="text-lg font-bold text-primary-foreground">{blog.title}</h3>
+                  <p className="text-primary-foreground/80 line-clamp-3 max-w-lg text-sm">
                     {blog.description}
                   </p>
                 </div>
 
-                <p className="text-secondary text-sm text-nowrap">
+                <p className="text-muted-foreground text-sm text-nowrap">
                   {blog.published_at}
                 </p>
               </div>
-              <div className="absolute top-0 left-0 z-0 h-full w-0 rounded-lg bg-gradient-to-r from-neutral-200 to-transparent transition-all duration-500 group-hover:w-full" />
-              <div className="absolute right-4 bottom-2 rounded-full bg-neutral-100 p-2 dark:bg-neutral-700">
-                <IconArrowRight className="text-secondary h-4 w-4 transition-all duration-500 group-hover:-rotate-45" />
+              <div className="absolute top-0 left-0 z-0 h-full w-0 rounded-lg bg-gradient-to-r from-accent/40 to-transparent transition-all duration-500 group-hover:w-full" />
+              <div className="absolute right-4 bottom-2 rounded-full bg-muted p-2  border">
+                <IconArrowRight className="text-muted-foreground h-4 w-4 transition-all duration-500 group-hover:-rotate-45" />
               </div>
             </Link>
 
-            {idx !== BLOGS.length - 1 && (
-              <div className="mx-auto mt-4 block h-[2px] w-[90%] bg-neutral-100" />
+            {idx !== BLOGS.length-1 && (
+              <div className="mx-auto mt-4 block h-[2px] w-[90%] bg-muted" />
             )}
           </motion.div>
         ))}

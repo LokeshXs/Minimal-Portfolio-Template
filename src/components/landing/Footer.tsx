@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="flex items-center gap-2">
         {SOCIALS.map((social, idx) => (
           <Link  href={social.href} key={`social-${idx}`} target="_blank">
-            <div className="text-secondary hover:text-primary shrink-0 rounded-full border border-neutral-200 bg-neutral-100 p-1 transition-all duration-300">
+            <div className="text-muted-foreground hover:text-primary-foreground shrink-0 rounded-full border  bg-muted p-1 transition-all duration-300">
               <social.icon className="h-5 w-5" />{" "}
             </div>
           </Link>

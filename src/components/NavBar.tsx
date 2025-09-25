@@ -12,8 +12,14 @@ import { NAV_LINKS } from "@/lib/data";
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { IconHome, IconHomeFilled } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconMoon,
+  IconSun,
+} from "@tabler/icons-react";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { useTheme } from "next-themes";
 
 export default function NavBar() {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -21,6 +27,7 @@ export default function NavBar() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const pathName = usePathname();
   const router = useRouter();
+  const { setTheme, theme } = useTheme();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -31,7 +38,7 @@ export default function NavBar() {
   });
 
   return (
-    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14">
+    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14 dark:bg-transparent">
       <motion.nav
         animate={{
           width: scrolled ? "90%" : "100%",
@@ -45,7 +52,7 @@ export default function NavBar() {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="relative mx-auto flex items-center justify-between gap-6 rounded-full bg-white/80 backdrop-blur-lg dark:bg-black"
+        className="relative mx-auto flex items-center justify-between gap-6 rounded-full bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80"
       >
         <AnimatePresence>
           {pathName !== "/" ? (
@@ -91,14 +98,14 @@ export default function NavBar() {
           )}
         </AnimatePresence>
 
-        <ul className="text-secondary flex items-center text-sm">
+        <ul className="text-muted-foreground  flex items-center text-sm">
           {NAV_LINKS.map((linkObj, idx) => (
             <li key={`link-${idx}`}>
               <Link
                 href={linkObj.href}
                 onMouseEnter={() => setHovered(idx)}
                 onMouseLeave={() => setHovered(null)}
-                className="hover:text-primary relative px-2 py-1 transition-all duration-300"
+                className="hover:text-primary-foreground  relative px-2 py-1 transition-all duration-300"
               >
                 <span className="relative z-[2]"> {linkObj.title}</span>
                 {hovered === idx && (
@@ -110,6 +117,41 @@ export default function NavBar() {
               </Link>
             </li>
           ))}
+
+          <Button
+            onClick={() => {
+              if (theme === "light") {
+                setTheme("dark");
+              } else {
+                setTheme("light");
+              }
+            }}
+            className="h-8 w-8 rounded-full [&_svg:not([class*='size-'])]:size-4 cursor-pointer"
+            variant="ghost"
+            title={theme==="light"?"Dark mode":"Light Mode"}
+          >
+            <AnimatePresence mode="wait">
+              {theme === "light" ? (
+                <motion.span
+                  key="darkmode"
+                  initial={{ opacity: 0, rotate: 180 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 180 }}
+                >
+                  <IconMoon />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="lightmode"
+                  initial={{ opacity: 0, rotate: 180 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 180 }}
+                >
+                  <IconSun />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </Button>
         </ul>
       </motion.nav>
     </Container>

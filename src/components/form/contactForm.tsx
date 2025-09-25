@@ -45,7 +45,7 @@ export default function ContactForm() {
                 <Input
                   placeholder="Tyler James"
                   {...field}
-                  className="border-2 border-neutral-300 shadow-sm hover:border-neutral-400 focus-visible:border-neutral-800 focus-visible:ring-transparent"
+                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
                 />
               </FormControl>
               <FormMessage />
@@ -62,7 +62,7 @@ export default function ContactForm() {
                 <Input
                   placeholder="tylerjames@yahoo.com"
                   {...field}
-                  className="border-2 border-neutral-300 shadow-sm hover:border-neutral-400 focus-visible:border-neutral-800 focus-visible:ring-transparent"
+                 className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
                 />
               </FormControl>
               <FormMessage />
@@ -79,7 +79,7 @@ export default function ContactForm() {
                 <Textarea
                   placeholder="Hi I want to hire you for a project..."
                   {...field}
-                  className="border-2 border-neutral-300 shadow-sm hover:border-neutral-400 focus-visible:border-neutral-800 focus-visible:ring-transparent"
+                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
                 />
               </FormControl>
               <FormMessage />
@@ -88,7 +88,7 @@ export default function ContactForm() {
         />
 
         <div className="flex -translate-y-2 justify-center">
-          <Button className="w-full font-normal">Send Message</Button>
+          <Button className="w-full font-normal cursor-pointer" variant="secondary">Send Message</Button>
         </div>
       </form>
     </Form>

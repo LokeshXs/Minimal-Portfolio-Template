@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 
 export default function TimelineBlock({
   achivement,
+  index,
 }: {
   achivement: {
     year: string;
@@ -12,6 +13,7 @@ export default function TimelineBlock({
       description: string;
     }[];
   };
+  index: number;
 }) {
   return (
     <motion.div
@@ -19,9 +21,16 @@ export default function TimelineBlock({
       animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
       className="space-y-4"
     >
-      <p className="shadow-custom w-fit rounded-md border border-neutral-200 px-2 font-medium">
-        {achivement.year}
-      </p>
+      <div className="flex items-center gap-3">
+        <p className="shadow-custom border-accent w-fit rounded-md border px-2 font-medium">
+          {achivement.year}
+        </p>
+        {index === 0 && (
+          <div className="relative h-2 w-2 rounded-full bg-orange-400">
+            <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-orange-400" />
+          </div>
+        )}
+      </div>
       <div className="space-y-2 pl-4">
         {achivement.achivements.map((achivement, idx) => (
           <motion.div
@@ -33,10 +42,12 @@ export default function TimelineBlock({
             key={achivement.title}
             className="flex gap-2"
           >
-            <IconCircleDashedCheck className="text-secondary h-4 w-4" />
+            <IconCircleDashedCheck className="text-muted-foreground h-4 w-4" />
             <div>
-              <p>{achivement.title}</p>
-              <p className="text-secondary text-sm">{achivement.description}</p>
+              <p className="text-primary-foreground">{achivement.title}</p>
+              <p className="text-muted-foreground text-sm">
+                {achivement.description}
+              </p>
             </div>
           </motion.div>
         ))}

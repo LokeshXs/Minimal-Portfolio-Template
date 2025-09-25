@@ -27,7 +27,7 @@ export default function ContactSection() {
         </p>
 
         <div
-          className={cn("mt-4 flex w-lg rounded-lg border border-border p-1 ring-1 ring-transparent focus-within:ring-neutral-300 shadow-custom ")}
+          className={cn("mt-4 flex w-lg rounded-lg border border-border p-1 ring-1 ring-transparent focus-within:ring-ring shadow-custom ")}
         >
           <Input
            
@@ -36,7 +36,7 @@ export default function ContactSection() {
             value={value}
             onChange={(e)=>{setValue(e.target.value)}}
           />
-          <Link href={`mailto:${value}`} className=""><Button >Send Enquiry</Button></Link>
+          <Link href={`mailto:${value}`} className=""><Button variant="secondary" >Send Enquiry</Button></Link>
         </div>
       </div>
     </div>

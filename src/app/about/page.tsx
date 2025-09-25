@@ -33,7 +33,7 @@ export default function Page() {
             variants={variants}
             initial="hiddenVariants"
             animate="visibleVariants"
-            className="text-4xl font-bold drop-shadow-lg"
+          className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl"
           >
             {"About Me 🙂".split(" ").map((word, idx) => (
               <motion.span
@@ -51,7 +51,7 @@ export default function Page() {
             variants={variants}
             initial="hiddenVariants"
             animate="visibleVariants"
-            className="text-secondary max-w-xl break-normal"
+           className="text-muted-foreground max-w-xl pt-4 text-base break-normal"
           >
             {ABOUT_DESCRIPTION.split(" ").map((word, idx) => (
               <motion.span
@@ -98,14 +98,14 @@ export default function Page() {
             ))}
           </div>
         </div>
-        <div className="mx-auto block h-[2px] w-full bg-neutral-100" />
+        <div className="mx-auto block h-[2px] w-full bg-muted" />
         <div className="py-8 px-4">
           <div className="flex justify-center">
             <AnimatedSubheading subheading="Timeline of achivements" />
           </div>
           <div className="mt-6 space-y-6">
             {ACHIVEMENTSTIMELINE.map((item, idx) => (
-              <TimelineBlock key={`achivement-${idx}`} achivement={item} />
+              <TimelineBlock key={`achivement-${idx}`} achivement={item} index={idx} />
             ))}
           </div>
         </div>

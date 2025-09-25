@@ -25,31 +25,31 @@ export default function ExperienceSection() {
               <div className="flex items-center gap-3">
                 <p className="text-lg font-medium">{exp.companyName}</p>{" "}
                 {idx === 0 && (
-                  <div className="relative h-2 w-2 rounded-full bg-orange-300">
-                    <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-orange-300" />
+                  <div className="relative h-2 w-2 rounded-full bg-orange-400">
+                    <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-orange-400" />
                   </div>
                 )}
               </div>
               <div className="flex flex-1 flex-col gap-2">
-                <p className="flex items-center gap-1">
-                  <span className="text-secondary shrink-0 rounded-full border border-neutral-200 bg-neutral-100 p-1">
+                <p className="flex items-center gap-1  text-primary-foreground/80">
+                  <span className="text-muted-foreground shrink-0 rounded-full border border-accent bg-muted p-1">
                     <IconCode className="h-3 w-3" />{" "}
                   </span>
                   {exp.designation}{" "}
                 </p>{" "}
                 <div className="flex items-center gap-1">
-                  <span className="text-secondary shrink-0 rounded-full border border-neutral-200 bg-neutral-100 p-1">
+                 <span className="text-muted-foreground shrink-0 rounded-full border border-accent bg-muted p-1">
                     <IconClockHour5 className="h-3 w-3" />{" "}
                   </span>
                   <div className="flex items-center gap-2">
-                    <p className="text-secondary text-sm">{exp.jobType}</p>
+                    <p className="text-primary-foreground/80 text-sm">{exp.jobType}</p>
                     <div className="h-4 w-[2px] rounded-full bg-neutral-200" />
-                    <p className="text-secondary text-sm">{exp.period}</p>
+                    <p className="text-primary-foreground/80 text-sm">{exp.period}</p>
                   </div>
                 </div>
               </div>
               <div className="flex items-start gap-1 pl-10">
-                <ul className="marker:text-secondary/80 text-secondary list-disc space-y-1 text-sm">
+                <ul className="marker:text-secondary/80 text-muted-foreground list-disc space-y-1 text-sm">
                   {exp.expPoints.map((point, i) => (
                     <li key={`point-${idx}-${i}`}>{point}</li>
                   ))}

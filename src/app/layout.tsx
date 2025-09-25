@@ -61,17 +61,24 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body
-        className={`${rubik.className} bg-neutral-100 antialiased [--pattern-fg:var(--color-gray-950)]/5 dark:bg-neutral-700 dark:[--pattern-fg:var(--color-white)]/10`}
+        className={`${rubik.className} bg-neutral-100 antialiased [--pattern-fg:var(--color-gray-950)]/5 dark:bg-black dark:[--pattern-fg:var(--color-white)]/10`}
       >
-        <NavBar />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavBar />
 
-        {children}
-        <Container className="px-0 pt-0 md:px-0">
-          <div className="mx-auto block h-[2px] w-full bg-neutral-100" />
-          <div className="x-4 md:px-10">
-            <Footer />
-          </div>
-        </Container>
+          {children}
+          <Container className="px-0 pt-0 md:px-0">
+            <div className="mx-auto block h-[2px] w-full bg-muted" />
+            <div className="x-4 md:px-10">
+              <Footer />
+            </div>
+          </Container>
+        </ThemeProvider>
         <Toaster position="top-center" />
       </body>
     </html>

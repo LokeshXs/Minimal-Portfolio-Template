@@ -25,7 +25,7 @@ export const NAV_LINKS = [
   },
 ];
 
-export const PROJECTS_DESCRIPTION="Here you’ll find a collection of the work I’ve built as a software engineer specializing in web development. Each project highlights different aspects of my skills — from crafting seamless user interfaces and responsive designs to developing scalable backend systems and integrating modern tools & APIs."
+
 
 export const PROJECTS = [
   {

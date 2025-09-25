@@ -1,27 +1,20 @@
 "use client";
 
-import TimelineBlock from "@/components/about/TimelineBlock";
 import AnimatedSubheading from "@/components/common/AnimatedSubHeading";
 import ProjectCard from "@/components/common/ProjectCard";
 import Container from "@/components/Container";
-import {
-  ABOUT_IMAGES,
-  ACHIVEMENTSTIMELINE,
-  PROJECTS,
-  PROJECTS_DESCRIPTION,
-} from "@/lib/data";
-import { IconArrowRight } from "@tabler/icons-react";
+import { PROJECTS } from "@/lib/data";
 
 import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
 
+const PROJECTS_DESCRIPTION =
+  "Here you’ll find a collection of the work I’ve built as a software engineer specializing in web development. Each project highlights different aspects of my skills — from crafting seamless user interfaces and responsive designs to developing scalable backend systems and integrating modern tools & APIs.";
 export default function Page() {
   return (
     <Container className="relative min-h-screen overflow-x-hidden">
       <div>
         <div className="space-y-2 px-4 py-8">
-          <motion.h1 className="text-4xl font-bold drop-shadow-lg">
+          <motion.h1 className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl">
             {"Projects 🔮".split(" ").map((word, idx) => (
               <motion.span
                 initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -34,7 +27,7 @@ export default function Page() {
               </motion.span>
             ))}
           </motion.h1>
-          <motion.p className="text-secondary max-w-xl break-words ">
+          <motion.p className="text-muted-foreground max-w-xl pt-4 text-base break-normal">
             {PROJECTS_DESCRIPTION.split(" ").map((word, idx) => (
               <motion.span
                 initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -42,14 +35,14 @@ export default function Page() {
                 transition={{ delay: 0.2 + idx / 20 }}
                 viewport={{ once: true }}
                 key={`${word}-${idx}`}
-                className=" inline-block"
+                className="inline-block"
               >
                 {word}&nbsp;
               </motion.span>
             ))}
           </motion.p>
         </div>
-         <div className="mx-auto block h-[2px] w-full bg-neutral-100" />
+        <div className="mx-auto block h-[2px] w-full bg-muted" />
         <div className="px-4 py-8">
           <div className="flex justify-center">
             <AnimatedSubheading subheading="I love building things" />
