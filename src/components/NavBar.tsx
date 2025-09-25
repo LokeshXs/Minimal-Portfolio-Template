@@ -12,11 +12,7 @@ import { NAV_LINKS } from "@/lib/data";
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  IconHome,
-  IconMoon,
-  IconSun,
-} from "@tabler/icons-react";
+import { IconHome, IconMoon, IconSun } from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
@@ -40,6 +36,7 @@ export default function NavBar() {
   return (
     <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14 dark:bg-transparent">
       <motion.nav
+  
         animate={{
           width: scrolled ? "90%" : "100%",
           boxShadow: scrolled ? "var(--shadow-custom)" : "none",
@@ -52,7 +49,7 @@ export default function NavBar() {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="relative mx-auto flex items-center justify-between gap-6 rounded-full bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80"
+        className="relative mx-auto flex items-center justify-between gap-6 overflow-hidden rounded-full bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80"
       >
         <AnimatePresence>
           {pathName !== "/" ? (
@@ -98,14 +95,22 @@ export default function NavBar() {
           )}
         </AnimatePresence>
 
-        <ul className="text-muted-foreground  flex items-center text-sm">
+        <motion.ul
+          initial={{ opacity: 0, y: -40, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{
+            duration: 0.3,
+            delay: 0.3,
+          }}
+          className="text-muted-foreground flex items-center text-sm"
+        >
           {NAV_LINKS.map((linkObj, idx) => (
             <li key={`link-${idx}`}>
               <Link
                 href={linkObj.href}
                 onMouseEnter={() => setHovered(idx)}
                 onMouseLeave={() => setHovered(null)}
-                className="hover:text-primary-foreground  relative px-2 py-1 transition-all duration-300"
+                className="hover:text-primary-foreground relative px-2 py-1 transition-all duration-300"
               >
                 <span className="relative z-[2]"> {linkObj.title}</span>
                 {hovered === idx && (
@@ -126,9 +131,9 @@ export default function NavBar() {
                 setTheme("light");
               }
             }}
-            className="h-8 w-8 rounded-full [&_svg:not([class*='size-'])]:size-4 cursor-pointer"
+            className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4"
             variant="ghost"
-            title={theme==="light"?"Dark mode":"Light Mode"}
+            title={theme === "light" ? "Dark mode" : "Light Mode"}
           >
             <AnimatePresence mode="wait">
               {theme === "light" ? (
@@ -152,7 +157,7 @@ export default function NavBar() {
               )}
             </AnimatePresence>
           </Button>
-        </ul>
+        </motion.ul>
       </motion.nav>
     </Container>
   );
