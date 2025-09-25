@@ -102,7 +102,7 @@ export default function NavBar() {
             duration: 0.3,
             delay: 0.3,
           }}
-          className="text-muted-foreground flex items-center text-sm"
+          className="text-primary-foreground/80 flex items-center text-sm"
         >
           {NAV_LINKS.map((linkObj, idx) => (
             <li key={`link-${idx}`}>
