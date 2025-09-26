@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/landing/Footer";
 import Container from "@/components/Container";
 import { Toaster } from "sonner";
+import MobileNavBar from "@/components/MobileNavBar";
 
 const rubik = Rubik({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -69,7 +70,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
+          <div className="max-md:hidden">
+            <NavBar />
+          </div>
+          <div className="md:hidden">
+            <MobileNavBar/>
+          </div>
 
           {children}
           <Container className="px-0 pt-0 md:px-0">
