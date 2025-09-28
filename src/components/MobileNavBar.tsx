@@ -33,7 +33,7 @@ export default function MobileNavBar() {
 
   return (
     <MobileNavContextProvider>
-      <Container className="fixed inset-x-0 top-0 z-10 bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80 px-4 py-2 shadow-custom ">
+      <div className="fixed inset-x-0 top-0 z-10 bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80 px-4 py-2 shadow-custom  max-w-5xl w-full mx-auto      ">
         <nav
       
           className="relative mx-auto flex items-center justify-between gap-6 overflow-hidden  "
@@ -129,7 +129,7 @@ export default function MobileNavBar() {
           </motion.ul>
         </nav>
        <MobileNavPanel/>
-      </Container>
+      </div>
     </MobileNavContextProvider>
   );
 }

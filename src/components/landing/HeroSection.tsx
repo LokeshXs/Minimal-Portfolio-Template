@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 py-8 max-sm:py-6  ">
       <h1 className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl">
         {NAME.split(" ").map((word, idx) => (
           <motion.span
@@ -22,7 +22,7 @@ export default function HeroSection() {
           </motion.span>
         ))}
       </h1>
-      <p className="text-muted-foreground max-w-xl pt-4 text-base break-normal">
+      <p className="text-muted-foreground max-w-xl pt-4 max-sm:pt-2 text-base max-sm:text-sm break-normal">
         {DESCRIPTION.split(" ").map((word, idx) => (
           <motion.span
             initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -41,6 +41,7 @@ export default function HeroSection() {
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{ delay: 1, duration: 0.3 }}
         viewport={{ once: true }}
+        className="mt-2"
       >
         <Link href="/Lokesh_resume.pdf" target="_blank">
           <Button

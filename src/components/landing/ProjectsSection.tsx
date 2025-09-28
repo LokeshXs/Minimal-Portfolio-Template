@@ -7,12 +7,12 @@ import ProjectCard from "../common/ProjectCard";
 
 export default function Projects() {
   return (
-    <div className="py-8  px-4">
+    <div className="py-8 max-sm:py-6  px-4">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="I love building things" />
       </div>
 
-      <div className=" grid grid-cols-1 gap-10 gap-y-12 py-6 md:grid-cols-2">
+      <div className=" grid grid-cols-1 gap-10 max-sm:gap-4  py-6  md:grid-cols-2">
         {PROJECTS.slice(0,4).map((project, idx) => (
           <motion.div
             initial={{

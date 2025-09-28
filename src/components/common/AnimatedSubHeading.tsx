@@ -12,6 +12,7 @@ export default function AnimatedSubheading({subheading}:{subheading:string}){
                 transition={{ delay: 0.1 + idx / 10 }}
                 viewport={{once:true}}
                 key={`${word}-${idx}`}
+                className=" max-sm:text-sm"
               >
                 {word}&nbsp;
               </motion.span>

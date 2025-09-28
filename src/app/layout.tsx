@@ -78,7 +78,7 @@ export default function RootLayout({
           </div>
 
           {children}
-          <Container className="px-0 pt-0 md:px-0">
+          <Container className="px-0 pt-0 md:px-0 max-md:pt-0" >
             <div className="mx-auto block h-[2px] w-full bg-muted" />
             <div className="x-4 md:px-10">
               <Footer />
