@@ -5,7 +5,7 @@ import AnimatedSubheading from "../common/AnimatedSubHeading";
 
 export default function BlogsSection() {
   return (
-    <div className="px-4 py-8 max-sm:py-6">
+    <div className="px-4 max-sm:px-2 py-8 max-sm:py-6">
       <div className="flex justify-center">
         <AnimatedSubheading subheading=" Sharing knowledge as I learn" />
       </div>
@@ -13,7 +13,7 @@ export default function BlogsSection() {
       <div className="space-y-4 max-sm:space-y-2 py-6">
         {BLOGS.slice(0, 3).map((blog, idx) => (
           <div key={`blog-${idx}`} className="relative">
-            <Link href={`/${blog.slug}`} className="group relative block p-4">
+            <Link href={`/${blog.slug}`} className="group relative block p-4 max-sm:p-2">
               <div className="relative z-[2] overflow-hidden space-y-2">
                 <div className="flex items-start max-sm:flex-col justify-between gap-4 max-sm:gap-[2px] ">
                   <h3 className="text-primary-foreground text-lg max-sm:text-base font-bold">

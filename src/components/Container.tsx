@@ -9,6 +9,6 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <section className={cn("max-w-5xl w-full mx-auto bg-white  dark:bg-neutral-900 px-4 md:px-10  pt-24 max-md:pt-14   ", className)}>{children}</section>
+    <section className={cn("max-w-5xl w-full mx-auto bg-white  dark:bg-neutral-900 px-6  md:px-10  pt-24 max-md:pt-14   ", className)}>{children}</section>
   );
 }

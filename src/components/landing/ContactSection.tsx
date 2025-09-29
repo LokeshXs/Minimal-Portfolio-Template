@@ -1,21 +1,30 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import AnimatedSubheading from "../common/AnimatedSubHeading";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function ContactSection() {
-
   const [value, setValue] = useState("");
+  const router = useRouter();
 
- 
+  const onSubmit = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    if (!emailRegex.test(value)) {
+      toast.warning("Invalid Email!");
+      return;
+    }
 
+    router.push(`mailto:${value}`);
+  };
 
   return (
-    <div className="px-4 py-8 max-sm:py-6">
+    <div className="px-4 py-8 max-sm:px-2 max-sm:py-6">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="Get in touch" />
       </div>
@@ -27,16 +36,22 @@ export default function ContactSection() {
         </p>
 
         <div
-          className={cn("mt-4 flex w-lg max-sm:w-full rounded-lg border border-border p-1 ring-1 ring-transparent focus-within:ring-ring shadow-custom ")}
+          className={cn(
+            "border-border focus-within:ring-ring shadow-custom mt-4 flex w-lg rounded-lg border p-1 ring-1 ring-transparent max-sm:w-full",
+          )}
         >
           <Input
-           
-            className="flex-1 border-0 shadow-none focus-visible:ring-0 "
+            className="flex-1 border-0 shadow-none focus-visible:ring-0 max-sm:text-sm"
             placeholder="Your email"
+            type="email"
             value={value}
-            onChange={(e)=>{setValue(e.target.value)}}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
           />
-          <Link href={`mailto:${value}`} className=""><Button variant="secondary" >Send Enquiry</Button></Link>
+          <Button onClick={onSubmit} variant="secondary">
+            Send Enquiry
+          </Button>
         </div>
       </div>
     </div>

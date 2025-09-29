@@ -41,7 +41,7 @@ export default function Page() {
 
   return (
     <Container className="relative min-h-screen overflow-x-hidden">
-      <div className="space-y-2 px-4 py-8">
+      <div className="space-y-2 px-4 max-sm:px-2 py-8 max-sm:py-6">
         <motion.h1
           variants={variants}
           initial="hiddenVariants"
@@ -73,7 +73,7 @@ export default function Page() {
               transition={{ delay: 0.2 + idx / 20 }}
               viewport={{ once: true }}
               key={`${word}-${idx}`}
-              className="inline-block"
+              className="inline-block max-sm:text-sm"
             >
               {word}&nbsp;
             </motion.span>
@@ -87,7 +87,7 @@ export default function Page() {
         variants={containerVariants}
         initial="hiddenVariants"
         animate="visibleVariants"
-        className="space-y-4 px-4 py-8"
+        className="space-y-4  px-4 max-sm:px-2 py-8 max-sm:py-6"
       >
         {BLOGS.map((blog, idx) => (
           <motion.div
@@ -95,23 +95,27 @@ export default function Page() {
             key={`blog-${idx}`}
             className="relative"
           >
-               <Link href={`/${blog.slug}`} className="group relative block p-4">
-              <div className="relative z-[2] flex items-start justify-between gap-6 overflow-hidden">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-primary-foreground">{blog.title}</h3>
-                  <p className="text-primary-foreground/80 line-clamp-3 max-w-lg text-sm">
-                    {blog.description}
+               <Link href={`/${blog.slug}`} className="group relative block p-4 max-sm:p-2">
+              <div className="relative z-[2] overflow-hidden space-y-2">
+                <div className="flex items-start max-sm:flex-col justify-between gap-4 max-sm:gap-[2px] ">
+                  <h3 className="text-primary-foreground text-lg max-sm:text-base font-bold">
+                    {blog.title}
+                  </h3>
+
+                  <p className="text-muted-foreground text-sm text-nowrap">
+                    {blog.published_at}
                   </p>
                 </div>
-
-                <p className="text-muted-foreground text-sm text-nowrap">
-                  {blog.published_at}
-                </p>
+                <div className="flex items-end justify-between gap-4">
+                  <p className="text-primary-foreground/80 line-clamp-3 max-w-lg text-sm  max-sm:max-w-full">
+                    {blog.description}
+                  </p>
+                  <div className="bg-muted rounded-full border p-2 max-sm:p-1">
+                    <IconArrowRight className="text-muted-foreground h-4 w-4 max-sm:h-3 max-sm:w-3 transition-all duration-500 group-hover:-rotate-45" />
+                  </div>
+                </div>
               </div>
-              <div className="absolute top-0 left-0 z-0 h-full w-0 rounded-lg bg-gradient-to-r from-accent/40 to-transparent transition-all duration-500 group-hover:w-full" />
-              <div className="absolute right-4 bottom-2 rounded-full bg-muted p-2  border">
-                <IconArrowRight className="text-muted-foreground h-4 w-4 transition-all duration-500 group-hover:-rotate-45" />
-              </div>
+              <div className="from-accent/40 absolute top-0 left-0 z-0 h-full w-0 rounded-lg bg-gradient-to-r to-transparent transition-all duration-500 group-hover:w-full max-sm:hidden" />
             </Link>
 
             {idx !== BLOGS.length-1 && (
@@ -121,8 +125,8 @@ export default function Page() {
         ))}
       </motion.div>
 
-      <div className="absolute top-0 left-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
-      <div className="absolute top-0 right-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+          <div className="absolute top-0 left-0 col-start-2 row-span-full row-start-1 h-full w-10 max-md:w-6 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+        <div className="absolute top-0 right-0 col-start-2 row-span-full row-start-1 h-full w-10  max-md:w-6 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
     </Container>
   );
 }

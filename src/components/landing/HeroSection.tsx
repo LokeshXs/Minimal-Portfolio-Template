@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="px-4 py-8 max-sm:py-6  ">
+    <div className="px-4 max-sm:px-2 py-8 max-sm:py-6  ">
       <h1 className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl">
         {NAME.split(" ").map((word, idx) => (
           <motion.span

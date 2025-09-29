@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <Container className="relative min-h-screen overflow-x-hidden">
-      <div className="space-y-2 px-4 py-8">
+      <div className="space-y-2 px-4 max-sm:px-2 py-8">
         <motion.h1
           variants={variants}
           initial="hiddenVariants"
@@ -47,7 +47,7 @@ export default function Page() {
           variants={variants}
           initial="hiddenVariants"
           animate="visibleVariants"
-          className="text-muted-foreground max-w-xl pt-4 text-base break-normal"
+          className="text-muted-foreground max-w-xl pt-4 text-base max-sm:text-sm break-normal"
         >
           {CONTACT_DESCRIPTION.split(" ").map((word, idx) => (
             <motion.span
@@ -64,12 +64,12 @@ export default function Page() {
         </motion.p>
       </div>
       <div className="block h-[2px] w-full bg-muted" />
-      <motion.div initial={{opacity:0,y:40,filter:"blur(10x)"}} animate={{opacity:1,y:0,filter:"blur(0px)"}}  className="mx-auto max-w-xl px-4 py-20">
+      <motion.div initial={{opacity:0,y:40,filter:"blur(10x)"}} animate={{opacity:1,y:0,filter:"blur(0px)"}}  className="mx-auto max-w-xl px-4 max-sm:px-2 py-20 max-sm:py-12">
         <ContactForm />
       </motion.div>
 
-      <div className="absolute top-0 left-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
-      <div className="absolute top-0 right-0 col-start-2 row-span-full row-start-1 h-full w-10 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+     <div className="absolute top-0 left-0 col-start-2 row-span-full row-start-1 h-full w-10 max-md:w-6 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+        <div className="absolute top-0 right-0 col-start-2 row-span-full row-start-1 h-full w-10  max-md:w-6 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
     </Container>
   );
 }

@@ -14,6 +14,7 @@ import {
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(4, { message: "Please enter full name" }),
@@ -31,21 +32,25 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {}
+  function onSubmit(values: z.infer<typeof formSchema>) {
+
+    toast.success("Message sent successfully!")
+    form.reset();
+  }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-sm:space-y-6">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-normal">Full Name</FormLabel>
+              <FormLabel className="font-normal max-sm:text-sm">Full Name</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Tyler James"
                   {...field}
-                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
+                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent max-sm:text-sm"
                 />
               </FormControl>
               <FormMessage />
@@ -57,12 +62,12 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-normal">Email Address</FormLabel>
+              <FormLabel className="font-normal max-sm:text-sm">Email Address</FormLabel>
               <FormControl>
                 <Input
                   placeholder="tylerjames@yahoo.com"
                   {...field}
-                 className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
+                 className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent max-sm:text-sm"
                 />
               </FormControl>
               <FormMessage />
@@ -74,12 +79,12 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-normal">Message</FormLabel>
+              <FormLabel className="font-normal max-sm:text-sm">Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Hi I want to hire you for a project..."
                   {...field}
-                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent"
+                  className="border-2 border-muted-foreground/20 shadow-sm hover:border-muted-foreground/60 focus-visible:border-primary-foreground focus-visible:ring-transparent max-sm:text-sm"
                 />
               </FormControl>
               <FormMessage />
@@ -88,7 +93,7 @@ export default function ContactForm() {
         />
 
         <div className="flex -translate-y-2 justify-center">
-          <Button className="w-full font-normal cursor-pointer" variant="secondary">Send Message</Button>
+          <Button className="w-full font-normal cursor-pointer max-sm:text-sm" variant="secondary">Send Message</Button>
         </div>
       </form>
     </Form>

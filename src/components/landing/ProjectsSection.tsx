@@ -7,7 +7,7 @@ import ProjectCard from "../common/ProjectCard";
 
 export default function Projects() {
   return (
-    <div className="py-8 max-sm:py-6  px-4">
+    <div className="py-8 max-sm:py-6  px-4 max-sm:px-2">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="I love building things" />
       </div>

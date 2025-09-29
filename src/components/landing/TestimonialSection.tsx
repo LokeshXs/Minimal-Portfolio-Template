@@ -15,7 +15,7 @@ import { motion } from "motion/react";
 
 export default function TestimonialSection() {
   return (
-    <div className="py-8  max-sm:space-y-6 px-4">
+    <div className="py-8 max-sm:py-6   px-4 max-sm:px-2">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="Words of appreciation" />
       </div>
@@ -31,7 +31,7 @@ export default function TestimonialSection() {
           duration: 0.3,
           delay: 0.2,
         }}
-        className="px-10 max-sm:px-12"
+        className="px-10 max-sm:px-2"
       >
         <Carousel
           opts={{
@@ -70,8 +70,8 @@ export default function TestimonialSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className=" max-sm:hidden" />
+          <CarouselNext className=" max-sm:hidden" />
         </Carousel>
       </motion.div>
     </div>

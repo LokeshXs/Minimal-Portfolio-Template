@@ -43,7 +43,7 @@ export default function MobileNavBar() {
               <motion.div
                 key="home"
                 title="Home"
-                className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full bg-neutral-100 p-4 dark:bg-neutral-700"
+                className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full bg-neutral-100 p-2  dark:bg-neutral-700"
                 initial={{
                   opacity: 0,
                   scale: 0.8,
@@ -55,7 +55,7 @@ export default function MobileNavBar() {
                 }}
                 onClick={() => router.push("/")}
               >
-                <IconHome className="text-neutral-700 transition-all duration-300 group-hover:scale-105 group-hover:text-neutral-900 dark:text-neutral-200" />
+                <IconHome className="text-neutral-700 transition-all duration-300 group-hover:scale-105 group-hover:text-neutral-900 dark:text-neutral-200 h-5 w-5" />
               </motion.div>
             ) : (
               <motion.div

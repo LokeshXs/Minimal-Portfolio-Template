@@ -31,7 +31,7 @@ export default function TimelineBlock({
           </div>
         )}
       </div>
-      <div className="space-y-2 pl-4">
+      <div className="space-y-2 pl-4 max-sm:pl-3">
         {achivement.achivements.map((achivement, idx) => (
           <motion.div
             initial={{ y: -40, opacity: 0, filter: "blur(10px)" }}
@@ -44,8 +44,8 @@ export default function TimelineBlock({
           >
             <IconCircleDashedCheck className="text-muted-foreground h-4 w-4" />
             <div>
-              <p className="text-primary-foreground">{achivement.title}</p>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-primary-foreground max-sm:text-sm">{achivement.title}</p>
+              <p className="text-muted-foreground text-sm max-sm:text-xs">
                 {achivement.description}
               </p>
             </div>

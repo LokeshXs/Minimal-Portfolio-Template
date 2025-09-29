@@ -4,16 +4,14 @@ import Image from "next/image";
 import AnimatedSubheading from "../common/AnimatedSubHeading";
 import { EXPERIENCE } from "@/lib/data";
 import {
-  IconArrowUp,
   IconClockHour5,
   IconCode,
-  IconSelector,
 } from "@tabler/icons-react";
 import TechStackBadge from "../common/TechStackBadge";
 
 export default function ExperienceSection() {
   return (
-    <div className="px-4 py-8 max-sm:py-6">
+    <div className="px-4 max-sm:px-2 py-8 max-sm:py-6">
       <div className="flex justify-center">
         <AnimatedSubheading subheading="Worked at reputed firms" />
       </div>

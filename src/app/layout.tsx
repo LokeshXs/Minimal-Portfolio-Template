@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Rubik } from "next/font/google";
+import {  Rubik } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import NavBar from "@/components/NavBar";
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     title: "Lokesh | Software Engineer & Web Developer Portfolio",
     description:
       "Showcasing projects, blogs, and experience in building scalable web applications using React, Next.js, Node.js, and PostgreSQL.",
-    url: "https://your-portfolio-domain.com",
+    url: "/",
     siteName: "Lokesh Portfolio",
     images: [
       {
-        url: "https://your-portfolio-domain.com/og-image.png",
+        url: "/showcard.png",
         width: 1200,
         height: 630,
         alt: "Lokesh Portfolio Preview",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Lokesh | Software Engineer & Web Developer Portfolio",
     description:
       "Portfolio of Lokesh, showcasing projects, blogs, and experience in web development.",
-    images: ["https://your-portfolio-domain.com/og-image.png"],
+    images: ["/showcard.png"],
   },
 };
 
@@ -85,7 +85,7 @@ export default function RootLayout({
             </div>
           </Container>
         </ThemeProvider>
-        <Toaster position="top-center" />
+        <Toaster position="top-center" closeButton  richColors />
       </body>
     </html>
   );
