@@ -393,7 +393,7 @@ export const SOCIALS=[
   },
     {
     name:"Github",
-    href:"https://github.com/LokeshXs",
+    href:"https://github.com/LokeshXs/Minimal-Portfolio-Template",
     icon:IconBrandGithub
 
   },
