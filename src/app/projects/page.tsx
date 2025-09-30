@@ -27,7 +27,7 @@ export default function Page() {
               </motion.span>
             ))}
           </motion.h1>
-          <motion.p className="text-muted-foreground max-w-xl pt-4 text-base max-sm:text-sm break-normal">
+          <motion.p className="text-muted-foreground max-w-xl pt-4 max-sm:pt-2 text-base max-sm:text-sm break-normal">
             {PROJECTS_DESCRIPTION.split(" ").map((word, idx) => (
               <motion.span
                 initial={{ opacity: 0, filter: "blur(10px)" }}

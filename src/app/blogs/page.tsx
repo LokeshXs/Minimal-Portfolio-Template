@@ -64,7 +64,7 @@ export default function Page() {
           variants={variants}
           initial="hiddenVariants"
           animate="visibleVariants"
-         className="text-muted-foreground max-w-xl pt-4 text-base break-normal"
+         className="text-muted-foreground max-w-xl pt-4 max-sm:pt-2 text-base break-normal"
         >
           {BLOGS_DESCRIPTION.split(" ").map((word, idx) => (
             <motion.span
@@ -95,7 +95,7 @@ export default function Page() {
             key={`blog-${idx}`}
             className="relative"
           >
-               <Link href={`/${blog.slug}`} className="group relative block p-4 max-sm:p-2">
+               <Link href={blog.link}  className="group relative block p-4 max-sm:p-2">
               <div className="relative z-[2] overflow-hidden space-y-2">
                 <div className="flex items-start max-sm:flex-col justify-between gap-4 max-sm:gap-[2px] ">
                   <h3 className="text-primary-foreground text-lg max-sm:text-base font-bold">

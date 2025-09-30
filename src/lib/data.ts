@@ -263,35 +263,35 @@ export const BLOGS = [
     title: "Getting Started with Tailwind CSS",
     description:
       "Learn the basics of Tailwind CSS and how to quickly build responsive, modern UIs.",
-    slug: "getting-started-with-tailwind-css",
+    link: "https://blog.sazzadur.site/building-a-responsive-layout",
     published_at: "Monday, Sep 1, 2025",
   },
   {
     title: "Understanding React Hooks",
     description:
       "A deep dive into useState, useEffect, and other powerful React hooks for managing state and side effects.",
-    slug: "understanding-react-hooks",
+    link: "https://blog.sazzadur.site/building-a-responsive-layout",
     published_at: "Thursday, Aug 28, 2025",
   },
   {
     title: "Mastering Next.js for Full-Stack Apps",
     description:
       "Build production-ready applications with server-side rendering, API routes, and static site generation in Next.js.",
-    slug: "mastering-nextjs-for-full-stack-apps",
+    link: "https://blog.sazzadur.site/building-a-responsive-layout",
     published_at: "Wednesday, Aug 20, 2025",
   },
   {
     title: "Introduction to Prisma ORM",
     description:
       "Simplify database access and queries with Prisma's type-safe ORM for modern Node.js applications.",
-    slug: "introduction-to-prisma-orm",
+    link: "https://blog.sazzadur.site/building-a-responsive-layout",
     published_at: "Friday, Aug 15, 2025",
   },
   {
     title: "10 Tips for Writing Clean JavaScript",
     description:
       "Best practices and techniques for writing maintainable, readable, and efficient JavaScript code.",
-    slug: "10-tips-for-writing-clean-javascript",
+    link: "https://blog.sazzadur.site/building-a-responsive-layout",
     published_at: "Sunday, Aug 10, 2025",
   },
 ];

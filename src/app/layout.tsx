@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "Frontend Engineer",
     "MERN Stack",
   ],
+  metadataBase:new URL('https://minimal-portfolio-template-by-lokesh.vercel.app/'),
   openGraph: {
     title: "Lokesh | Software Engineer & Web Developer Portfolio",
     description:

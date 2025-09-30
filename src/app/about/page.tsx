@@ -51,7 +51,7 @@ export default function Page() {
             variants={variants}
             initial="hiddenVariants"
             animate="visibleVariants"
-           className="text-muted-foreground max-w-xl pt-4 text-base max-sm:text-sm break-normal"
+           className="text-muted-foreground max-w-xl pt-4 max-sm:pt-2 text-base max-sm:text-sm break-normal"
           >
             {ABOUT_DESCRIPTION.split(" ").map((word, idx) => (
               <motion.span
