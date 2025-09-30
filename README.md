@@ -27,7 +27,10 @@ You can easily showcase:
 
 ## 🖼️ Preview
 
-![App Screenshot](https://mock-demo-link.com/screenshot.png)
+![App Screenshot](https://minimal-portfolio-template-by-lokesh.vercel.app/_next/image?url=%2Fdemoscreenshots%2Fdemo1.png&w=640&q=100)
+![App Screenshot](https://minimal-portfolio-template-by-lokesh.vercel.app/_next/image?url=%2Fdemoscreenshots%2Fdemo2.png&w=640&q=100)
+![App Screenshot](https://minimal-portfolio-template-by-lokesh.vercel.app/_next/image?url=%2Fdemoscreenshots%2Fdemo3.png&w=640&q=100)
+![App Screenshot](https://minimal-portfolio-template-by-lokesh.vercel.app/_next/image?url=%2Fdemoscreenshots%2Fdemo4.png&w=640&q=100)
 
 ---
 
