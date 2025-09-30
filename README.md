@@ -65,7 +65,7 @@ npm run dev
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://minimal-portfolio-template-by-lokesh.vercel.app/](https://minimal-portfolio-template-by-lokesh.vercel.app/) with your browser to see the result.
 
 ---
 
