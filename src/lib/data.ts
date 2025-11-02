@@ -404,3 +404,5 @@ export const SOCIALS=[
 
   },
 ]
+
+export const GITHUB_USERNAME="LokeshXs"

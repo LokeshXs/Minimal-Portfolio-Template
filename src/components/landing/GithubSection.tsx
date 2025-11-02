@@ -1,5 +1,5 @@
 import AnimatedSubheading from "../common/AnimatedSubHeading";
-import GithubContributionsGrid from "../common/GithubContributionsGrid";
+import GithubContributionsGrid from "../common/GithubData";
 import { Suspense } from "react";
 
 export default async function GithubSection() {
