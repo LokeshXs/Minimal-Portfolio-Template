@@ -78,14 +78,28 @@ export async function fetchRepoData(names: string[]) {
           "X-Github-Api-Version": "2022-11-28",
         },
       });
+
+      const languagesUsed = await octokit.request("GET /repos/{owner}/{repo}/languages",{
+          owner: githubUsername,
+        repo: name,
+        headers: {
+          "X-Github-Api-Version": "2022-11-28",
+        },
+      })
+
+      
       const data = response.data;
+      const languagesData = languagesUsed.data;
       const filteredData = {
         name: data.name,
+        owner:data.owner.login,
         description: data.description,
-        url: data.url,
+        url: data.html_url,
         forks_count: data.forks_count,
         stargazers_count: data.stargazers_count,
         created_at: data.created_at,
+        topics:data.topics,
+        languages:languagesData
       };
 
       return filteredData;

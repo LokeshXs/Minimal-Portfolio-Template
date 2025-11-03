@@ -406,3 +406,10 @@ export const SOCIALS=[
 ]
 
 export const GITHUB_USERNAME="LokeshXs"
+
+export const GITHUB_SHOWCASE_REPOS=[
+  "url-shortener",
+  "Minimal-Portfolio-Template",
+  "1BeatClub-V2.0",
+  "FilmStash"
+]

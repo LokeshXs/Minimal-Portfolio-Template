@@ -45,3 +45,20 @@ export function getGithubMonthsAndContributions(
 
   return {result,totalContributions};
 }
+
+
+export function fetchTopLanguages(languages:{[key:string]:number}){
+
+
+  const total = Object.values(languages).reduce((a,b)=>a+b,0);
+
+  const percentageData = Object.entries(languages).map(([lang,bytes])=>(
+    [lang,((bytes/total)*100).toFixed(1)+"%"]
+  ));
+
+  
+
+  
+
+  return percentageData;
+}

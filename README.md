@@ -25,6 +25,47 @@ You can easily showcase:
 
 ---
 
+
+
+## 📊 GitHub Stats
+
+Showcase your **GitHub contributions** and top repositories directly on your portfolio.
+
+This section automatically fetches your GitHub activity, visualizing your open-source footprint beautifully.
+
+### ⚙️ Setup Instructions
+
+1. **Generate a GitHub Token**
+
+   - Go to **Settings → Developer Settings → Personal Access Tokens → Tokens (classic)**  
+   - Click **"Generate new token"**, give it a name (e.g., `portfolio-token`)  
+   - Check the **`repo`** permission, and then **generate** your token  
+
+2. **Add Token to `.env` File**
+
+   - Create a `.env` file in the root directory of your project  
+   - Add the following line:
+     ```bash
+     GITHUB_ACCESS_TOKEN=your_generated_token_here
+     ```
+   - This token will be used securely to fetch your contribution and repository data
+
+3. **Add your GitHub username**
+
+   - Open the file:  
+     ```bash
+     src/data/data.ts
+     ```
+   - Replace the placeholder username with your actual GitHub username
+
+4. **Edit Repository Names**
+
+   - In the same file, update the list of repositories you want to showcase under the repos array.
+
+💡 *That’s it! Your live GitHub contributions and repositories will appear automatically on your portfolio.*
+
+---
+
 ## 🖼️ Preview
 
 ![App Screenshot](https://minimal-portfolio-template-by-lokesh.vercel.app/_next/image?url=%2Fdemoscreenshots%2Fdemo1.png&w=640&q=100)
