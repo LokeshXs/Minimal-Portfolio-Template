@@ -54,7 +54,7 @@ This section automatically fetches your GitHub activity, visualizing your open-s
 
    - Open the file:  
      ```bash
-     src/data/data.ts
+     src/lib/data.ts
      ```
    - Replace the placeholder username with your actual GitHub username
 
