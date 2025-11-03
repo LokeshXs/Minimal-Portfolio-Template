@@ -15,7 +15,9 @@ export default async function GithubData() {
   const repositoryDataResponse = await fetchRepoData(GITHUB_SHOWCASE_REPOS);
 
   if (!contributionsResponse.data || !repositoryDataResponse.data) {
-    return <div>Missing Credentials to fetch the data</div>;
+    return <div className=" flex justify-center items-center py-12">
+      <p className=" text-center max-sm:text-xs">Missing Credentials to fetch the data</p>
+    </div>;
   }
 
 
