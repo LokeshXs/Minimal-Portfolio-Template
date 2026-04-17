@@ -8,11 +8,16 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Container from "./Container";
-import { NAV_LINKS } from "@/lib/data";
+import { NAV_LINKS, SOCIALS } from "@/lib/data";
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { IconHome, IconMoon, IconSun } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconHome,
+  IconMoon,
+  IconSun,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
@@ -22,40 +27,32 @@ import MobileNavToggleButton from "./ui/MobileNavToggleButton";
 import { cn } from "@/lib/utils";
 import MobileNavPanel from "./MobileNavPanel";
 
-
 export default function MobileNavBar() {
-
   const pathName = usePathname();
   const router = useRouter();
   const { setTheme, theme } = useTheme();
 
-
-
   return (
     <MobileNavContextProvider>
-      <div className="fixed inset-x-0 top-0 z-10 bg-white/80 backdrop-blur-lg dark:bg-neutral-900/80 px-4 py-2 shadow-custom  max-w-5xl w-full mx-auto      ">
-        <nav
-      
-          className="relative mx-auto flex items-center justify-between gap-6 overflow-hidden  "
-        >
+      <div className="shadow-custom fixed inset-x-0 top-0 z-10 mx-auto w-full max-w-5xl bg-white/80 px-4 py-2 backdrop-blur-lg dark:bg-neutral-900/80">
+        <nav className="relative mx-auto flex items-center justify-between gap-6 overflow-hidden">
           <AnimatePresence>
             {pathName !== "/" ? (
               <motion.div
                 key="home"
                 title="Home"
-                className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full bg-neutral-100 p-2  dark:bg-neutral-700"
+                className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full bg-neutral-100 p-2 dark:bg-neutral-700"
                 initial={{
                   opacity: 0,
                   scale: 0.8,
                 }}
                 animate={{
-                 
                   opacity: 1,
                   scale: 1,
                 }}
                 onClick={() => router.push("/")}
               >
-                <IconHome className="text-neutral-700 transition-all duration-300 group-hover:scale-105 group-hover:text-neutral-900 dark:text-neutral-200 h-5 w-5" />
+                <IconHome className="h-5 w-5 text-neutral-700 transition-all duration-300 group-hover:scale-105 group-hover:text-neutral-900 dark:text-neutral-200" />
               </motion.div>
             ) : (
               <motion.div
@@ -65,7 +62,6 @@ export default function MobileNavBar() {
                   scale: 0.8,
                 }}
                 animate={{
-                 
                   opacity: 1,
                   scale: 1,
                 }}
@@ -90,45 +86,57 @@ export default function MobileNavBar() {
             }}
             className="text-primary-foreground/80 flex items-center gap-1 text-sm"
           >
-            <Button
-              onClick={() => {
-                if (theme === "light") {
-                  setTheme("dark");
-                } else {
-                  setTheme("light");
-                }
-              }}
-              className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4"
-              variant="ghost"
-              title={theme === "light" ? "Dark mode" : "Light Mode"}
-            >
-              <AnimatePresence mode="wait">
-                {theme === "light" ? (
-                  <motion.span
-                    key="darkmode"
-                    initial={{ opacity: 0, rotate: 180 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: 180 }}
-                  >
-                    <IconMoon />
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="lightmode"
-                    initial={{ opacity: 0, rotate: 180 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: 180 }}
-                  >
-                    <IconSun />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </Button>
+            <div className=" flex items-center justify-center gap-1">
+              <Link
+                href={SOCIALS[1].href}
+                target="_blank"
+                title={SOCIALS[1].name}
+                className="text-muted-foreground hover:text-primary-foreground transition-all duration-300"
+              >
+                <IconBrandGithub className="text-muted-foreground size-5" />
+              </Link>
+
+              <p className="text-muted-foreground">|</p>
+              <Button
+                onClick={() => {
+                  if (theme === "light") {
+                    setTheme("dark");
+                  } else {
+                    setTheme("light");
+                  }
+                }}
+                className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4"
+                variant="ghost"
+                title={theme === "light" ? "Dark mode" : "Light Mode"}
+              >
+                <AnimatePresence mode="wait">
+                  {theme === "light" ? (
+                    <motion.span
+                      key="darkmode"
+                      initial={{ opacity: 0, rotate: 180 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 180 }}
+                    >
+                      <IconMoon />
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="lightmode"
+                      initial={{ opacity: 0, rotate: 180 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 180 }}
+                    >
+                      <IconSun />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </Button>
+            </div>
 
             <MobileNavToggleButton />
           </motion.ul>
         </nav>
-       <MobileNavPanel/>
+        <MobileNavPanel />
       </div>
     </MobileNavContextProvider>
   );

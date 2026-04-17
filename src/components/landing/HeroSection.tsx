@@ -6,10 +6,11 @@ import { motion } from "motion/react";
 import { DESCRIPTION, NAME } from "@/lib/data";
 import Link from "next/link";
 
+
 export default function HeroSection() {
   return (
     <div className="px-4 max-sm:px-2 py-8 max-sm:py-6  ">
-      <h1 className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl">
+      <h1 className={"font-pixel font-extrabold  text-primary-foreground text-3xl tracking-tight drop-shadow-xl md:text-4xl"}>
         {NAME.split(" ").map((word, idx) => (
           <motion.span
             initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -22,7 +23,7 @@ export default function HeroSection() {
           </motion.span>
         ))}
       </h1>
-      <p className="text-muted-foreground max-w-xl pt-4 max-sm:pt-2 text-base max-sm:text-sm break-normal">
+      <p className="text-muted-foreground max-w-lg pt-4 max-sm:pt-2 text-base max-sm:text-sm break-normal">
         {DESCRIPTION.split(" ").map((word, idx) => (
           <motion.span
             initial={{ opacity: 0, filter: "blur(10px)" }}

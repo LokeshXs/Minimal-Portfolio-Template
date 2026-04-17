@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import {  Rubik } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistPixelSquare } from "geist/font/pixel";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import NavBar from "@/components/NavBar";
@@ -8,10 +9,6 @@ import Container from "@/components/Container";
 import { Toaster } from "sonner";
 import MobileNavBar from "@/components/MobileNavBar";
 
-const rubik = Rubik({
-  weight: ["400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Lokesh | Software Engineer & Web Developer Portfolio",
@@ -63,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body
-        className={`${rubik.className} bg-neutral-100 antialiased [--pattern-fg:var(--color-gray-950)]/5 dark:bg-black dark:[--pattern-fg:var(--color-white)]/10`}
+        className={`${GeistSans.className} ${GeistPixelSquare.variable} bg-neutral-100 antialiased [--pattern-fg:var(--color-gray-950)]/5 dark:bg-black dark:[--pattern-fg:var(--color-white)]/10`}
       >
         <ThemeProvider
           attribute="class"
@@ -81,9 +78,9 @@ export default function RootLayout({
           {children}
           <Container className="px-0 pt-0 md:px-0 max-md:pt-0" >
             <div className="mx-auto block h-[2px] w-full bg-muted" />
-            <div className="x-4 md:px-10">
+           
               <Footer />
-            </div>
+          
           </Container>
         </ThemeProvider>
         <Toaster position="top-center" closeButton  richColors />

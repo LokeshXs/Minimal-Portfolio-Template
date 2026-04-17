@@ -8,11 +8,16 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Container from "./Container";
-import { NAV_LINKS } from "@/lib/data";
+import { NAV_LINKS, SOCIALS } from "@/lib/data";
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { IconHome, IconMoon, IconSun } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconHome,
+  IconMoon,
+  IconSun,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
@@ -34,9 +39,8 @@ export default function NavBar() {
   });
 
   return (
-    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14 dark:bg-transparent ">
+    <Container className="fixed inset-x-0 top-0 z-10 bg-transparent px-4 py-4 md:px-14 dark:bg-transparent">
       <motion.nav
-  
         animate={{
           width: scrolled ? "90%" : "100%",
           boxShadow: scrolled ? "var(--shadow-custom)" : "none",
@@ -123,40 +127,57 @@ export default function NavBar() {
             </li>
           ))}
 
-          <Button
-            onClick={() => {
-              if (theme === "light") {
-                setTheme("dark");
-              } else {
-                setTheme("light");
-              }
-            }}
-            className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4"
-            variant="ghost"
-            title={theme === "light" ? "Dark mode" : "Light Mode"}
-          >
-            <AnimatePresence mode="wait">
-              {theme === "light" ? (
-                <motion.span
-                  key="darkmode"
-                  initial={{ opacity: 0, rotate: 180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 180 }}
-                >
-                  <IconMoon />
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="lightmode"
-                  initial={{ opacity: 0, rotate: 180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 180 }}
-                >
-                  <IconSun />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </Button>
+          <div className="ml-4 flex items-center justify-center gap-1">
+            <Button
+              className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4 group"
+              variant="ghost"
+              asChild
+            >
+              <Link
+                href={SOCIALS[1].href}
+                target="_blank"
+                title={SOCIALS[1].name}
+              >
+                <IconBrandGithub className="text-primary-foreground" />
+              </Link>
+            </Button>
+
+            <p className="text-muted-foreground">|</p>
+            <Button
+              onClick={() => {
+                if (theme === "light") {
+                  setTheme("dark");
+                } else {
+                  setTheme("light");
+                }
+              }}
+              className="h-8 w-8 cursor-pointer rounded-full [&_svg:not([class*='size-'])]:size-4"
+              variant="ghost"
+              title={theme === "light" ? "Dark mode" : "Light Mode"}
+            >
+              <AnimatePresence mode="wait">
+                {theme === "light" ? (
+                  <motion.span
+                    key="darkmode"
+                    initial={{ opacity: 0, rotate: 180 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: 180 }}
+                  >
+                    <IconMoon />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="lightmode"
+                    initial={{ opacity: 0, rotate: 180 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: 180 }}
+                  >
+                    <IconSun />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </Button>
+          </div>
         </motion.ul>
       </motion.nav>
     </Container>

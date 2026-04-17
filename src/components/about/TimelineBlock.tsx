@@ -22,7 +22,7 @@ export default function TimelineBlock({
       className="space-y-4"
     >
       <div className="flex items-center gap-3">
-        <p className="shadow-custom border-accent w-fit rounded-md border px-2 font-medium">
+        <p className="shadow-custom border-accent w-fit rounded-md border px-2 font-medium max-sm:text-sm">
           {achivement.year}
         </p>
         {index === 0 && (
@@ -40,9 +40,9 @@ export default function TimelineBlock({
               delay: 0.3 + idx / 10,
             }}
             key={achivement.title}
-            className="flex gap-2"
+            className="flex gap-2 "
           >
-            <IconCircleDashedCheck className="text-muted-foreground h-4 w-4" />
+            <IconCircleDashedCheck className="text-muted-foreground size-4 max-sm:size-3 shrink-0 mt-1 " />
             <div>
               <p className="text-primary-foreground max-sm:text-sm">{achivement.title}</p>
               <p className="text-muted-foreground text-sm max-sm:text-xs">

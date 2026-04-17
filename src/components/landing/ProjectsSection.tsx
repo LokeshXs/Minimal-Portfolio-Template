@@ -31,6 +31,7 @@ export default function Projects() {
               ease: "easeInOut",
             }}
             key={`project-${idx}`}
+            className="h-full"
           >
             <ProjectCard project={project} />
           </motion.div>

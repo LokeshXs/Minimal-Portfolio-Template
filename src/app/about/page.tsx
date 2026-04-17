@@ -33,7 +33,7 @@ export default function Page() {
             variants={variants}
             initial="hiddenVariants"
             animate="visibleVariants"
-          className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl"
+          className="text-primary-foreground font-pixel text-2xl font-extrabold  tracking-tight drop-shadow-xl md:text-4xl"
           >
             {"About Me 🙂".split(" ").map((word, idx) => (
               <motion.span

@@ -47,8 +47,8 @@ export default function TestimonialSection() {
           <CarouselContent className="py-6 ">
             {TESTIMONIALS.map((item, idx) => (
               <CarouselItem key={`test-${idx}`} className="md:basis-1/2 ">
-                <div className="hover:shadow-custom flex min-h-[240px] max-sm:min-h-[200px] flex-col justify-between gap-6 rounded-lg border p-4 transition-all duration-300">
-                  <blockquote className="line-clamp-5 max-sm:text-sm text-primary-foreground/80">
+                <div className=" hover:shadow-custom flex min-h-[220px] max-sm:min-h-[200px] flex-col justify-between gap-6 rounded-lg border p-4 transition-all duration-300">
+                  <blockquote className="line-clamp-5 text-sm text-primary-foreground/80">
                     {item.content}
                   </blockquote>
 

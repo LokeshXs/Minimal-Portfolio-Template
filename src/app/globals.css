@@ -75,6 +75,7 @@
 
   --color-sidebar-ring: var(--sidebar-ring);
   --shadow-custom: var(--shadow-custom);
+  --font-pixel: var(--font-geist-pixel-square);
 }
 
 :root {

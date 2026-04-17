@@ -14,7 +14,7 @@ export default function Page() {
     <Container className="relative min-h-screen overflow-x-hidden">
       <div>
         <div className="space-y-2 px-4 max-sm:px-2 py-8 max-sm:py-6">
-          <motion.h1 className="text-primary-foreground text-2xl font-medium tracking-tight drop-shadow-xl md:text-4xl">
+          <motion.h1 className="text-primary-foreground font-pixel font-extrabold text-2xl  tracking-tight drop-shadow-xl md:text-4xl">
             {"Projects 🔮".split(" ").map((word, idx) => (
               <motion.span
                 initial={{ opacity: 0, filter: "blur(10px)" }}

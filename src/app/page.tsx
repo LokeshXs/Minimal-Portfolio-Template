@@ -20,8 +20,7 @@ export default function Home() {
         <GithubSection />
         <div className="bg-muted mx-auto block h-[2px] w-full" />
 
-        <BlogsSection />
-        <div className="bg-muted mx-auto block h-[2px] w-full" />
+        
         <TestimonialSection />
         <div className="bg-muted mx-auto block h-[2px] w-full" />
         <ContactSection />
